@@ -45,16 +45,29 @@ footer { text-align: center;
 		 color: #003300;
 		 padding: 2.5%;
 }
+    
+#demo { display: flex;
+        flex-direction: row;
+}
+    
+nav{flex:1;} /* 10% of the space. They all add up to 100% or 10*/
+main{flex:7;}
+aside{flex:2;}
+
 @media only screen and (max-width: 1024px) {
             body { margin: 0; padding: 0; } 
             #wrapper { width: auto; margin: 0; }
 		    h1 { font-size: 200%; }
 			nav li { padding: 0 0.5em; 
 				     font-size: 1.2em; 	}
-			
+            #demo{flex-direction: column;}
+            nav ul {display: flex;
+                    flex-direction: row;
+                    justify-content: center;}		
 }		
 @media only screen and (max-width: 768px) {
-         	
+    nav {order: 1;}
+    nav ul {flex-wrap: wrap;}
 }
 header, main, nav, footer, figure, figcaption { display: block; }
 </style>
@@ -64,7 +77,7 @@ header, main, nav, footer, figure, figcaption { display: block; }
   <header>
     <h1>Casita Sedona</h1>
   </header>  
-  <div>
+  <div id="demo">
   <nav>
     <ul>
 	 <li><a href="index.html">Home</a></li>
